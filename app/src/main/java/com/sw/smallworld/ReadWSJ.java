@@ -6,7 +6,8 @@ import android.os.AsyncTask;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.sw.smallworld.fragment.Fragment1;
+import com.sw.smallworld.FeedItem;
+import com.sw.smallworld.MyAdapter;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -22,9 +23,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 /**
- * Created by wdw88_000 on 7/26/2016.
+ * Created by wdw88_000 on 7/27/2016.
  */
-public class ReadRss extends AsyncTask<Void,Void,Void>{
+public class ReadWSJ extends AsyncTask<Void,Void,Void> {
     Context context;
     ProgressDialog progressDialog;
 
@@ -34,7 +35,7 @@ public class ReadRss extends AsyncTask<Void,Void,Void>{
 
     public String address;
 
-    public ReadRss(Context context, RecyclerView recyclerView){
+    public ReadWSJ(Context context, RecyclerView recyclerView){
         this.recyclerView = recyclerView;
         this.context=context;
         progressDialog = new ProgressDialog(context);
@@ -83,8 +84,8 @@ public class ReadRss extends AsyncTask<Void,Void,Void>{
                             item.setPubDate(current.getTextContent());
                         }else  if(current.getNodeName().equalsIgnoreCase("link")){
                             item.setLink(current.getTextContent());
-                        }else if(current.getNodeName().equalsIgnoreCase("media:thumbnail")){
-                            String url = current.getAttributes().item(2).getTextContent();
+                        }else if(current.getNodeName().equalsIgnoreCase("media:content")){
+                            String url = current.getAttributes().item(1).getTextContent();
                             item.setThumbnailUrl(url);}
 
                     }

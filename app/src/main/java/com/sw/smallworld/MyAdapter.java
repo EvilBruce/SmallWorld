@@ -18,6 +18,10 @@ import java.util.ArrayList;
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     ArrayList<FeedItem> feedItems;
     Context context;
+    public MyAdapter(){
+
+    }
+
     public MyAdapter(Context context,ArrayList<FeedItem> feedItems){
         this.feedItems = feedItems;
         this.context = context;
@@ -41,8 +45,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-        return feedItems.size();
+            return feedItems.size();
     }
+
     public  class MyViewHolder extends RecyclerView.ViewHolder{
         TextView Title, Description, Date;
         ImageView Thumbnail;
