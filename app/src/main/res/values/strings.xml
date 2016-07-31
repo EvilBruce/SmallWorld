@@ -5,5 +5,11 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="drawer_opened">Opened</string>
     <string name="drawer_closed">Closed</string>
+    <string name="Facebook">Facebook</string>
+    <string name="Weibo">Weibo</string>
+    <string name="Twitter">Twitter</string>
+    <string name="Instagram">Instagram</string>
+    <string name="Snapchat">Snapchat</string>
+    <string name="News">News</string>
 </resources>
 

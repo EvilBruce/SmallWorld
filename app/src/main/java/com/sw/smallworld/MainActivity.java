@@ -58,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         listViewSliding.setItemChecked(0,true);
         drawerLayout.closeDrawer(listViewSliding);
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
-        replaceFragment(0);
         listViewSliding.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
