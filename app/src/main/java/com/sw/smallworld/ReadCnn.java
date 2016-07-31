@@ -6,7 +6,7 @@ import android.os.AsyncTask;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import com.sw.smallworld.fragment.Fragment1;
+import com.sw.smallworld.adapter.MyAdapter;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

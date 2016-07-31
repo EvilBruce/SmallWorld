@@ -1,6 +1,7 @@
-package com.sw.smallworld;
+package com.sw.smallworld.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.sw.smallworld.FeedItem;
+import com.sw.smallworld.NewsDetail;
+import com.sw.smallworld.R;
 
 import java.util.ArrayList;
 
@@ -16,20 +20,17 @@ import java.util.ArrayList;
  * Created by wdw88_000 on 7/26/2016.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    ArrayList<FeedItem> feedItems;
-    Context context;
-    public MyAdapter(){
-
-    }
+        ArrayList<FeedItem> feedItems;
+        Context context;
 
     public MyAdapter(Context context,ArrayList<FeedItem> feedItems){
         this.feedItems = feedItems;
         this.context = context;
     }
     @Override
-    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View view = LayoutInflater.from(context).inflate(R.layout.custom_row_news_item,parent,false);
-        MyViewHolder holder = new MyViewHolder(view);
+        MyViewHolder holder = new MyViewHolder(view,context,feedItems);
         return holder;
 
     }
@@ -48,17 +49,36 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             return feedItems.size();
     }
 
-    public  class MyViewHolder extends RecyclerView.ViewHolder{
+    public  class MyViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
         TextView Title, Description, Date;
         ImageView Thumbnail;
-        public MyViewHolder(View itemView){
+        ArrayList<FeedItem> feedItems = new ArrayList<FeedItem>();
+        Context context;
+        public MyViewHolder(View itemView,Context context, ArrayList<FeedItem> feedItems){
             super(itemView);
+            this.feedItems = feedItems;
+            this.context = context;
+            itemView.setOnClickListener(this);
             Title = (TextView) itemView.findViewById(R.id.title_text);
             Description = (TextView) itemView.findViewById(R.id.description_text);
             Date = (TextView) itemView.findViewById(R.id.date_text);
             Thumbnail = (ImageView) itemView.findViewById(R.id.thumb_img);
         }
 
+        @Override
+        public void onClick(View view) {
+            int position =getAdapterPosition();
+            FeedItem feedItem = this.feedItems.get(position);
+            Intent intent = new Intent(this.context, NewsDetail.class);
+            intent.putExtra("Title",feedItem.getTitle());
+            intent.putExtra("Description",feedItem.getDescription());
+            intent.putExtra("Date",feedItem.getPubDate());
+            intent.putExtra("Image",feedItem.getThumbnailUrl());
+            this.context.startActivity(intent);
+
+
+        }
     }
+
 
 }
