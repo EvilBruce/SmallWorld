@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.sw.smallworld.adapter.MyAdapter;
+import com.sw.smallworld.model.FeedItem;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

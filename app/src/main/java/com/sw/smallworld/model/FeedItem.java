@@ -1,4 +1,4 @@
-package com.sw.smallworld;
+package com.sw.smallworld.model;
 
 /**
  * Created by wdw88_000 on 7/26/2016.

@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.sw.smallworld.FeedItem;
+import com.sw.smallworld.model.FeedItem;
 import com.sw.smallworld.NewsDetail;
 import com.sw.smallworld.R;
 
@@ -74,6 +74,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             intent.putExtra("Description",feedItem.getDescription());
             intent.putExtra("Date",feedItem.getPubDate());
             intent.putExtra("Image",feedItem.getThumbnailUrl());
+            intent.putExtra("Link",feedItem.getLink());
             this.context.startActivity(intent);
 
 

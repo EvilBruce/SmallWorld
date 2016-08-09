@@ -23,9 +23,9 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 /**
- * Created by wdw88_000 on 7/26/2016.
+ * Created by wdw88_000 on 8/8/2016.
  */
-public class ReadRss extends AsyncTask<Void,Void,Void>{
+public class ReadABC extends AsyncTask<Void,Void,Void> {
     Context context;
     ProgressDialog progressDialog;
 
@@ -35,7 +35,7 @@ public class ReadRss extends AsyncTask<Void,Void,Void>{
 
     public String address;
 
-    public ReadRss(Context context, RecyclerView recyclerView){
+    public ReadABC(Context context, RecyclerView recyclerView){
         this.recyclerView = recyclerView;
         this.context=context;
         progressDialog = new ProgressDialog(context);
@@ -85,8 +85,9 @@ public class ReadRss extends AsyncTask<Void,Void,Void>{
                         }else  if(current.getNodeName().equalsIgnoreCase("link")){
                             item.setLink(current.getTextContent());
                         }else if(current.getNodeName().equalsIgnoreCase("media:thumbnail")){
-                            String url = current.getAttributes().item(2).getTextContent();
+                            String url = current.getAttributes().item(0).getTextContent();
                             item.setThumbnailUrl(url);}
+
                     }
                     feedItems.add(item);
 
@@ -113,3 +114,4 @@ public class ReadRss extends AsyncTask<Void,Void,Void>{
 
     }
 }
+

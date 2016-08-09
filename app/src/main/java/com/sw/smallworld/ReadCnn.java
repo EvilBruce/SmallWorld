@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.sw.smallworld.adapter.MyAdapter;
+import com.sw.smallworld.model.FeedItem;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -85,7 +86,7 @@ public class ReadCnn extends AsyncTask<Void,Void,Void>{
                             item.setLink(current.getTextContent());
                         }else if(current.getNodeName().equalsIgnoreCase("media:content")){
                             String url = current.getAttributes().item(0).getTextContent();
-                            item.setThumbnailUrl(url);}
+                        item.setThumbnailUrl(url);}
 
                     }
                     feedItems.add(item);

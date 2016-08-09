@@ -1,22 +1,20 @@
 package com.sw.smallworld;
 
-import android.content.Intent;
+
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
+import android.widget.TextView;
 
 import com.sw.smallworld.adapter.SlidingMenuAdapter;
 import com.sw.smallworld.fragment.Fragment1;
@@ -27,14 +25,17 @@ import com.sw.smallworld.model.ItemSlideMenu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+
+public class   MainActivity extends AppCompatActivity {
     private List<ItemSlideMenu> listSliding;
     private SlidingMenuAdapter adapter;
     private ListView listViewSliding;
     private DrawerLayout drawerLayout;
     private ActionBarDrawerToggle actionBarDrawerToggle;
 
+    TextView facebook,twitter,instagram,snapchat,weibo;
     RecyclerView recyclerView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -83,6 +84,47 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
+
+
+
+
+        facebook = (TextView) findViewById(R.id.facebook);
+        twitter = (TextView) findViewById(R.id.twitter);
+        instagram = (TextView) findViewById(R.id.instagram);
+        snapchat = (TextView) findViewById(R.id.snapchat);
+        weibo = (TextView) findViewById(R.id.weibo);
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        instagram.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        snapchat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+        weibo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
@@ -128,4 +170,5 @@ public class MainActivity extends AppCompatActivity {
             transaction.commit();
         }
     }
+
 }
