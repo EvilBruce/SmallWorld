@@ -34,7 +34,8 @@
         android:id="@+id/thumb_img"
         android:layout_below="@+id/date_text"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/test" />
+        android:src="@drawable/test"
+        android:scaleType="fitXY"/>
 
     <TextView
         android:lines="1"

@@ -22,7 +22,7 @@
                 android:layout_weight="1"
                 android:orientation="horizontal" >
 
-                <TextView
+                <ViewFlipper
                     android:id="@+id/news"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -32,7 +32,114 @@
                     android:onClick="setContentView"
                     android:background="@drawable/test"
                     android:textAlignment="center"
-                    android:gravity="bottom"/>
+                    android:autoStart="true"
+                    android:flipInterval="2000">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#FFFFFF"
+                        android:orientation="vertical" >
+
+                        <TextView
+                        android:id="@+id/nyt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="110dp"
+                        android:background="@drawable/nytbg"
+                        android:textColor="#000000"
+                        android:textSize="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:layout_alignParentStart="true"
+                        android:text="Home"
+                        android:gravity="right"/>
+                        <TextView
+                            android:id="@+id/nytworld"
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dp"
+                            android:background="@drawable/nytbg"
+                            android:textColor="#000000"
+                            android:textSize="30dp"
+                            android:padding="5dp"
+
+                            android:text="World"
+                            android:gravity="right"
+
+                            android:layout_below="@+id/nyt"
+                            android:layout_alignParentStart="true" />
+                        <TextView
+                            android:id="@+id/nytus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dp"
+                            android:background="@drawable/nytbg"
+                            android:textColor="#000000"
+                            android:textSize="30dp"
+                            android:padding="5dp"
+
+                            android:text="U.S.A"
+                            android:gravity="right"
+                            android:layout_below="@+id/nytworld"
+                            android:layout_alignParentStart="true" />
+
+
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:background="#FFFFFF" >
+
+                        <ImageView
+                            android:id="@+id/bbc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dp"
+                            android:src="@drawable/bbc_news_fliper"
+                            android:layout_alignParentTop="true"
+                            android:layout_marginTop="10dp"
+                            android:layout_alignParentStart="true"
+                            android:padding="5dp"
+                            android:scaleType="fitXY"/>
+                        <ImageView
+                            android:id="@+id/bbcworld"
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dp"
+                            android:src="@drawable/bbc_world"
+                            android:padding="5dp"
+                            android:layout_below="@+id/bbc"
+                            android:layout_alignParentStart="true"
+                            android:scaleType="fitXY"/>
+
+                        <ImageView
+                            android:id="@+id/bbcamerica"
+                            android:layout_width="wrap_content"
+                            android:layout_height="110dp"
+                            android:src="@drawable/bbc_america"
+                            android:padding="5dp"
+                            android:layout_below="@+id/bbcworld"
+                            android:layout_alignParentStart="true"
+                            android:scaleType="fitXY"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#1E90FF"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/TextView03"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="100dp"
+                            android:text="Flipper Content 3" >
+                        </TextView>
+
+                    </RelativeLayout>
+                    </ViewFlipper>
+
 
 
                 <LinearLayout

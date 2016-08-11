@@ -10,27 +10,25 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sw.smallworld.R;
-import com.sw.smallworld.ReadABC;
-import com.sw.smallworld.ReadCnn;
 import com.sw.smallworld.ReadRss;
 
-public class Fragment2 extends Fragment {
-    RecyclerView recyclerView;
-    final static public String address="http://feeds.abcnews.com/abcnews/usheadlines";
 
-    public Fragment2() {
+public class Fragment5 extends  Fragment {
+    RecyclerView recyclerView;
+    final static public String address="http://feeds.bbci.co.uk/news/politics/rss.xml";
+
+    public Fragment5() {
         // Required empty public constructor
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment1,container,false);
+        View rootView = inflater.inflate(R.layout.fragment3,container,false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
-        ReadABC readABC = new ReadABC(this.getContext(),recyclerView);
-        readABC.address = address;
-        readABC.execute();
+        ReadRss readRss = new ReadRss(this.getContext(),recyclerView);
+        readRss.address = address;
+        readRss.execute();
         return rootView;
     }
-
 
 }

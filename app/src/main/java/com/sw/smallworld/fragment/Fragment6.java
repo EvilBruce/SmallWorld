@@ -11,14 +11,13 @@ import android.view.ViewGroup;
 
 import com.sw.smallworld.R;
 import com.sw.smallworld.ReadABC;
-import com.sw.smallworld.ReadCnn;
 import com.sw.smallworld.ReadRss;
 
-public class Fragment2 extends Fragment {
+public class Fragment6 extends Fragment {
     RecyclerView recyclerView;
-    final static public String address="http://feeds.abcnews.com/abcnews/usheadlines";
+    final static public String address="http://feeds.abcnews.com/abcnews/topstories";
 
-    public Fragment2() {
+    public Fragment6() {
         // Required empty public constructor
     }
 
@@ -31,6 +30,5 @@ public class Fragment2 extends Fragment {
         readABC.execute();
         return rootView;
     }
-
 
 }

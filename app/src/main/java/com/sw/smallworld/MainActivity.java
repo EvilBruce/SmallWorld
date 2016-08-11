@@ -1,6 +1,7 @@
 package com.sw.smallworld;
 
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -13,13 +14,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.sw.smallworld.adapter.SlidingMenuAdapter;
 import com.sw.smallworld.fragment.Fragment1;
 import com.sw.smallworld.fragment.Fragment2;
 import com.sw.smallworld.fragment.Fragment3;
+import com.sw.smallworld.fragment.Fragment4;
+import com.sw.smallworld.fragment.Fragment5;
+import com.sw.smallworld.fragment.Fragment6;
+import com.sw.smallworld.fragment.Twitter;
 import com.sw.smallworld.model.ItemSlideMenu;
 
 import java.util.ArrayList;
@@ -35,6 +42,10 @@ public class   MainActivity extends AppCompatActivity {
 
     TextView facebook,twitter,instagram,snapchat,weibo;
     RecyclerView recyclerView;
+    ViewFlipper viewFlipper;
+    ImageView BBC;
+    ImageView BBCWORLD;
+    ImageView BBCUS;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +56,7 @@ public class   MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         listSliding = new ArrayList<>();
         listSliding.add(new ItemSlideMenu(R.drawable.bbc_news, "BBC"));
-        listSliding.add(new ItemSlideMenu(R.drawable.nyt_logo, "NYTimes"));
+        listSliding.add(new ItemSlideMenu(R.drawable.abccom_logo, "ABC"));
         listSliding.add(new ItemSlideMenu(R.drawable.wsj_sm_logo, "The Wall Street Journal"));
         listSliding.add(new ItemSlideMenu(R.drawable.bbc_news, "TW"));
         listSliding.add(new ItemSlideMenu(R.drawable.bbc_news, "SC"));
@@ -85,6 +96,31 @@ public class   MainActivity extends AppCompatActivity {
         };
         drawerLayout.setDrawerListener(actionBarDrawerToggle);
 
+        viewFlipper = (ViewFlipper) findViewById(R.id.news);
+        BBC = (ImageView) viewFlipper.findViewById(R.id.bbc);
+        BBC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(5);
+            }
+        });
+
+        BBCWORLD = (ImageView) viewFlipper.findViewById(R.id.bbcworld);
+        BBCWORLD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(3);
+            }
+        });
+
+        BBCUS = (ImageView) viewFlipper.findViewById(R.id.bbcamerica);
+        BBCUS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                replaceFragment(3);
+            }
+        });
+
 
 
 
@@ -93,6 +129,7 @@ public class   MainActivity extends AppCompatActivity {
         instagram = (TextView) findViewById(R.id.instagram);
         snapchat = (TextView) findViewById(R.id.snapchat);
         weibo = (TextView) findViewById(R.id.weibo);
+
 
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,7 +140,8 @@ public class   MainActivity extends AppCompatActivity {
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent intent = new Intent(MainActivity.this, TwitterTrendMain.class);
+                startActivity(intent);
             }
         });
         instagram.setOnClickListener(new View.OnClickListener() {
@@ -157,6 +195,15 @@ public class   MainActivity extends AppCompatActivity {
                 break;
             case 2:
                 fragment = new Fragment3();
+                break;
+            case 3:
+                fragment = new Fragment4();
+                break;
+            case 4:
+                fragment = new Fragment5();
+                break;
+            case 5:
+                fragment = new Fragment6();
                 break;
             default:
                 fragment = new Fragment1();

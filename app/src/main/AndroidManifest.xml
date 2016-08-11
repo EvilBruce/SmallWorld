@@ -17,7 +17,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewsDetail"></activity>
+        <activity android:name=".NewsDetail" />
+        <activity android:name=".TwitterTrendMain"></activity>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="7ba0781efbad554ae8a74fb9dac7c9b52476b579" />
     </application>
 
 </manifest>
