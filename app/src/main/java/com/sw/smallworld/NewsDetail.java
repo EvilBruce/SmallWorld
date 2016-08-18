@@ -1,22 +1,33 @@
 package com.sw.smallworld;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.sw.smallworld.fragment.FragmentWebView;
+
+import java.net.URL;
 
 public class NewsDetail extends AppCompatActivity {
     Context context;
     ImageView imageView;
     TextView title, description,date,link;
-
+    String url;
+    Bundle data;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_news_detail);
 
         imageView = (ImageView) findViewById(R.id.imageView);
@@ -29,7 +40,19 @@ public class NewsDetail extends AppCompatActivity {
         description.setText(getIntent().getStringExtra("Description"));
         date.setText(getIntent().getStringExtra("Date"));
         link.setText(getIntent().getStringExtra("Link"));
-
-
+        data = new Bundle();
+        data.putString("currenturl", getIntent().getStringExtra("Link"));
+        link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new FragmentWebView();
+                fragment.setArguments(data);
+                FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.main_news,fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+            }
+        });
     }
+
 }

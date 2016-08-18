@@ -10,15 +10,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.sw.smallworld.R;
-import com.sw.smallworld.ReadCnn;
 import com.sw.smallworld.ReadRss;
 
 
-public class Fragment4 extends  Fragment {
+public class Fragment7 extends  Fragment {
     RecyclerView recyclerView;
-    final static public String address="http://feeds.bbci.co.uk/news/business/rss.xml";
+    final static public String address="http://feeds.bbci.co.uk/news/politics/rss.xml";
 
-    public Fragment4() {
+    public Fragment7() {
         // Required empty public constructor
     }
 

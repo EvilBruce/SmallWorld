@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle"><!-- android:shape="" 表示是圆角矩形还是椭圆等等 -->
+   ><!-- android:shape="" 表示是圆角矩形还是椭圆等等 -->
     <!-- 背景颜色 -->
     <solid android:color="#FFFFFF" />
 
     <!-- padding 表示内部空间距离背景图片内部边距 的距离 -->
     <padding android:top="15dp" android:bottom="15dp" />
 
-    <!-- 图片边框属性 -->
-    <stroke
-        android:width="0dp"
-        android:color="#ffffff" />
 
     <!-- 圆角的程度 -->
-    <corners android:radius="5dp" />
-    <!-- 定义背景的渐变  如果是不渐变可不写-->
-    <gradient
-        android:angle="45"
-        android:centerColor="#FFFFFF"
-    android:centerX="0.5"
-    android:centerY="0.5"
-    android:endColor="#FFFFFF"
-    android:startColor="#FFFFFF"
-    android:type="linear" />
-    <!--  linear 线性渐变，这是默认设置
-      radial 放射性渐变，以开始色为中心。
-      sweep 扫描线式的渐变。-->
+    <corners android:radius="1dp"
+             android:bottomLeftRadius="0dp"
+             android:bottomRightRadius="0dp"
+             android:topLeftRadius="8dp"
+             android:topRightRadius="8dp"/>
+
 
 </shape>

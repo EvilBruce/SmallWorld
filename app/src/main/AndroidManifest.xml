@@ -10,18 +10,31 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:launchMode="singleTop"
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewsDetail" />
-        <activity android:name=".TwitterTrendMain"></activity>
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="7ba0781efbad554ae8a74fb9dac7c9b52476b579" />
+
+
+
+        <activity
+            android:name=".NewsDetail"
+            android:label="News Details "
+            android:parentActivityName=".MainActivity"
+
+            >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.sw.smallworld.MainActivity"
+                />
+
+        </activity>
+
     </application>
 
 </manifest>

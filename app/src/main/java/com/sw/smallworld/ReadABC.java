@@ -1,26 +1,26 @@
 package com.sw.smallworld;
 
-import android.app.ProgressDialog;
-import android.content.Context;
-import android.os.AsyncTask;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+        import android.app.ProgressDialog;
+        import android.content.Context;
+        import android.os.AsyncTask;
+        import android.support.v7.widget.LinearLayoutManager;
+        import android.support.v7.widget.RecyclerView;
 
-import com.sw.smallworld.adapter.MyAdapter;
-import com.sw.smallworld.model.FeedItem;
+        import com.sw.smallworld.adapter.MyAdapter;
+        import com.sw.smallworld.model.FeedItem;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+        import org.w3c.dom.Document;
+        import org.w3c.dom.Element;
+        import org.w3c.dom.Node;
+        import org.w3c.dom.NodeList;
 
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
+        import java.io.InputStream;
+        import java.net.HttpURLConnection;
+        import java.net.URL;
+        import java.util.ArrayList;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+        import javax.xml.parsers.DocumentBuilder;
+        import javax.xml.parsers.DocumentBuilderFactory;
 
 /**
  * Created by wdw88_000 on 8/8/2016.
@@ -114,4 +114,3 @@ public class ReadABC extends AsyncTask<Void,Void,Void> {
 
     }
 }
-

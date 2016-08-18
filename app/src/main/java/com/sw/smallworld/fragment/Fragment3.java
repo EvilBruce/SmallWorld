@@ -21,7 +21,7 @@ public class Fragment3 extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment3,container,false);
+        View rootView = inflater.inflate(R.layout.fragment1,container,false);
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recyclerview);
         ReadWSJ readWSJ= new ReadWSJ(this.getContext(),recyclerView);
         readWSJ.address = address;

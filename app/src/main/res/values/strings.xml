@@ -12,5 +12,10 @@
     <string name="Snapchat">Snapchat</string>
     <string name="News">News</string>
     <string name="aaaaa">AAAAA</string>
+    <string-array name="titles_tab">
+        <item>World</item>
+        <item>Economy</item>
+        <item>Sport</item>
+    </string-array>
 </resources>
 

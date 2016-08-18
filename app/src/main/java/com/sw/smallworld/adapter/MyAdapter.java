@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
-import com.sw.smallworld.model.FeedItem;
 import com.sw.smallworld.NewsDetail;
+import com.sw.smallworld.model.FeedItem;
 import com.sw.smallworld.R;
 
 import java.util.ArrayList;
@@ -20,8 +20,8 @@ import java.util.ArrayList;
  * Created by wdw88_000 on 7/26/2016.
  */
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-        ArrayList<FeedItem> feedItems;
-        Context context;
+    ArrayList<FeedItem> feedItems;
+    Context context;
 
     public MyAdapter(Context context,ArrayList<FeedItem> feedItems){
         this.feedItems = feedItems;
@@ -46,7 +46,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     @Override
     public int getItemCount() {
-            return feedItems.size();
+        return feedItems.size();
     }
 
     public  class MyViewHolder extends RecyclerView.ViewHolder  implements View.OnClickListener{
